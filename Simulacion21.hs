@@ -7,7 +7,7 @@ main = do
  print(carta1)
  print(carta2)
  
- print(primeraSuma (mayor carta1 carta2))
+ print(primeraSuma (menor carta1 carta2) (mayor carta1 carta2))
  
 mayor :: Int->Int->Int
 mayor a b = if a >= b then a
@@ -18,6 +18,8 @@ menor a b = if a < b then a
 		else b
 
  
-primeraSuma::Int->Int
-primeraSuma a = if a == 1 then 11
-		else a
+primeraSuma::Int->Int->Int
+primeraSuma a b= if a == 1 && b>=10 then 21
+		else if a == 1 && b<10 then 11+b
+		else if b>=10 then a+10
+		else a+b
